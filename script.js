@@ -60,3 +60,29 @@ posts.forEach(function(post) {
     // 게시글 목록에 카드 추가
     postList.appendChild(card);
 });
+
+
+// 글쓰기 페이지
+const writeForm = document.querySelector("#write-form");
+
+if (writeForm) {
+    writeForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const newPost = {
+            id: Date.now(),
+            category: document.querySelector("#category").value,
+            title: document.querySelector("#title").value,
+            content: document.querySelector("#content").value,
+            date: new Date().toLocaleDateString("ko-KR")
+        };
+
+        posts.push(newPost);
+
+        localStorage.setItem("posts", JSON.stringify(posts));
+
+        alert("글이 등록되었습니다!");
+
+        location.href = "index.html";
+    });
+}

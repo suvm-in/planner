@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dearly - 글쓰기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">Dearly.</h1>
+        <nav class="menu">
+            <a href="index.html">홈</a>
+            <a href="2.html">내 일기</a>
+            <a href="3.html">공개 글</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>새로운 글 작성</h2>
+
+            <form id="write-form">
+                <select id="category" required>
+                    <option value="">카테고리 선택</option>
+                    <option value="일상">일상</option>
+                    <option value="생각">생각</option>
+                    <option value="여행">여행</option>
+                </select>
+
+                <input type="text" id="title"
+                       placeholder="제목을 입력하세요" required>
+
+                <textarea id="content"
+                          placeholder="오늘의 이야기를 적어보세요."
+                          required></textarea>
+
+                <button type="submit">작성 완료</button>
+                <button type="button"
+                        onclick="location.href='index.html'">
+                    취소
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
